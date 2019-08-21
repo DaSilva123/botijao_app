@@ -77,8 +77,11 @@ class _LoginPageState extends State<LoginPage> {
                 child: RaisedButton(
                   onPressed: () {
                     setState(() {
-                      Navigator.pushNamedAndRemoveUntil(context,
-                          '/paginaInicial', (Route<dynamic> route) => false);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PaginaInicial()),
+                      );
+
                     });
                   },
                   child: Text("Login", style: TextStyle(color: Colors.white)),
