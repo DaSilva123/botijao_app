@@ -32,20 +32,15 @@ class _LoginPageState extends State<LoginPage> {
               Container(
                   padding: EdgeInsets.only(
                       top: MediaQuery.of(context).size.height / 8,
-                      left: MediaQuery.of(context).size.height / 18),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset("img/botijao_logo.jpg"),
-                      Expanded(
-                          child: Text(
-                        "Nome do Aplicativo",
-                        style: TextStyle(
-                            color: Colors.blueAccent,
-                            fontSize: 40,
-                            fontFamily: "Arial"),
-                      ))
-                    ],
-                  )),
+                      left: MediaQuery.of(context).size.height / 50),
+                child: Image.asset('img/botijao_logo.jpg'),
+                  ),
+              Container(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height / 50,
+                    left: MediaQuery.of(context).size.height / 50),
+                 child: Text("Nome do aplicativo", style: TextStyle(color: Colors.blue,fontSize: 25,)),
+                 ),
               Container(
                 padding: EdgeInsets.only(
                     top: MediaQuery.of(context).size.height / 8),
@@ -91,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(bottom: 0.0, top: 100.0),
+                padding: EdgeInsets.only(bottom: 0.0, top: 60.0),
                 child: Text("Ainda não tem conta?",
                     style: TextStyle(color: Colors.black)),
               ),
