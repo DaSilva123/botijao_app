@@ -167,7 +167,7 @@ class _PaginaInicialState extends State<PaginaInicial> {
                   child: Card(
                       child: Center(
                         child: Container(
-                          
+
                         )
                       )
                   )
