@@ -5,12 +5,7 @@ class Loginapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'login',
-        theme: ThemeData(primarySwatch: Colors.green),
-        home: LoginPage(),
-        routes: <String, WidgetBuilder>{
-          '/paginaInicial': (BuildContext context) => PaginaInicial()
-        });
+       );
   }
 }
 
@@ -55,6 +50,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Container(
                 child: TextField(
+                  obscureText: true,
                   decoration: InputDecoration(
                       labelStyle: TextStyle(
                         color: Colors.black,

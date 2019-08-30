@@ -1,3 +1,6 @@
+import 'package:bezier_chart/bezier_chart.dart';
+import 'package:botijao_app/Teste.dart';
+import 'package:botijao_app/paginaConfiguracao.dart';
 import 'package:botijao_app/paginaHistorico.dart';
 import 'package:flutter/material.dart';
 import 'package:botijao_app/radial_progress.dart';
@@ -15,6 +18,7 @@ class _PaginaInicialState extends State<PaginaInicial> {
         centerTitle: true,
         title: Text("Pagina Inicial"),
       ),
+      ////////////////////////////////////////menu/////////////////////////
       drawer: new Drawer(
         child: ListView(
           children: <Widget>[
@@ -24,6 +28,17 @@ class _PaginaInicialState extends State<PaginaInicial> {
                 currentAccountPicture: new CircleAvatar(
                   backgroundImage: new NetworkImage('http://i.pravatar.cc/300'),
                 )),
+            ListTile(
+              title: Text("Pagina Inicial"),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PaginaInicial()));
+              },
+            ),
+            Divider(
+              color: Colors.black,
+              height: 5.0,
+            ),
             ListTile(
               title: Text("Historico"),
               onTap: () {
@@ -39,16 +54,23 @@ class _PaginaInicialState extends State<PaginaInicial> {
               title: Text("Configurações"),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => paginaHistorico()));
+                    MaterialPageRoute(builder: (context) => paginaConfiguracao()));
               },
-            )
+
+            ),
+            Divider(
+              color: Colors.black,
+              height: 5.0,
+            ),
           ],
         ),
       ),
+      ////////////////////////////////////////menu/////////////////////////
+
       body: SingleChildScrollView(
+        /////////////////////////////////////porcentagem///////////////////
         child: Container(
-            width: 3800,
-            height: 2000,
+
             child: Column(
               children: <Widget>[
                 Padding(
@@ -58,40 +80,44 @@ class _PaginaInicialState extends State<PaginaInicial> {
                 ),
                 Container(
                   padding: EdgeInsets.only(
-                    right: MediaQuery.of(context).size.height / 2.65,
+                    right: MediaQuery.of(context).size.height / 3.0,
                   ),
-                  child: Text("Estimativa de tempo",style: TextStyle(fontSize: 15),),
+                  child: Text(
+                    "Porcentagem do botijão",
+                    style: TextStyle(fontSize: 15),
+                  ),
                 ),
                 Container(
                   height: 250,
                   width: 400,
-                  padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 200),
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height / 200),
                   child: Card(
                       child: Center(
-                        child: Container(
-                          child:  RadialProgress(),
-                        )
-                      )
-                  ),
+                          child: Container(
+                    child: RadialProgress(),
+                  ))),
                   decoration: BoxDecoration(boxShadow: [
-                BoxShadow(
-                color: Colors.black12,
-                    blurRadius: 4.0,
-                  offset: Offset(0, 5)
-                    ),
-              ]),
+                    BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 4.0,
+                        offset: Offset(0, 5)),
+                  ]),
                 ),
-
+                /////////////////////////////////////porcentagem////////////////
                 Divider(
                   height: 40,
                 ),
+                /////////////////////////////////////Estimativa////////////////
                 Container(
                   padding: EdgeInsets.only(
                     right: MediaQuery.of(context).size.height / 2.65,
                   ),
-                  child: Text("Estimativa de tempo",style: TextStyle(fontSize: 15),),
+                  child: Text(
+                    "Estimativa de tempo",
+                    style: TextStyle(fontSize: 15),
+                  ),
                 ),
-
                 Container(
                   height: 200,
                   width: 400,
@@ -157,22 +183,128 @@ class _PaginaInicialState extends State<PaginaInicial> {
                     BoxShadow(
                         color: Colors.black12,
                         blurRadius: 10.0,
-                      offset: Offset(0, 5)
-                        ),
+                        offset: Offset(0, 5)),
                   ]),
                 ),
+                /////////////////////////////////////Estimativa////////////////
+                Divider(height: 40,),
+                /////////////////////////////////////Grafico////////////////
                 Container(
-                  height: 200,
+                  padding: EdgeInsets.only(
+                    right: MediaQuery.of(context).size.height / 2.35,
+                  ),
+                  child: Text(
+                    "Gastos de hoje",
+                    style: TextStyle(fontSize: 15),
+                  ),
+                ),
+                Container(
+
+                  height: 270,
                   width: 400,
                   child: Card(
                       child: Center(
-                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                  child: Card(
+                                      child: Center(
+                    child: Container(
+                      padding: EdgeInsets.only(top: 15),
+                      width: 350,
+                      height: 180,
+                      child: Card(
+                        child: Center(
+                              child: Container(
 
-                        )
-                      )
-                  )
+                                child: Container(
+                                  color: Colors.red,
+                                  height: MediaQuery.of(context).size.height / 2,
+                                  width: MediaQuery.of(context).size.width * 0.9,
+                                  child: BezierChart(
+                                    bezierChartScale: BezierChartScale.CUSTOM,
+                                    xAxisCustomValues: const [
+                                      0,
+                                      4,
+                                      8,
+                                      12,
+                                      16,
+                                      20,
+                                      24
+                                    ],
+                                    series: const [
+                                      BezierLine(
+                                        data: const [
+                                          DataPoint<double>(value: 100, xAxis: 0),
+                                          DataPoint<double>(value: 99, xAxis: 4),
+                                          DataPoint<double>(value: 98, xAxis: 8),
+                                          DataPoint<double>(value: 95, xAxis: 12),
+                                          DataPoint<double>(value: 95, xAxis: 16),
+                                          DataPoint<double>(value: 95, xAxis: 20),
+                                          DataPoint<double>(value: 93, xAxis: 24),
+                                        ],
+                                      ),
+                                    ],
+                                    config: BezierChartConfig(
+                                      verticalIndicatorStrokeWidth: 3.0,
+                                      verticalIndicatorColor: Colors.black26,
+                                      showVerticalIndicator: true,
+                                      backgroundColor: Colors.blueAccent,
+                                      snap: false,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(boxShadow: [
+                        BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 10.0,
+                                offset: Offset(10, 10)),
+                      ]),
+                    ),
+                  ))),
+                              Container(
 
-                )
+                                padding: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height / 30,
+                                    left: MediaQuery.of(context).size.height / 2.9
+
+                                ),
+
+
+                                child: RaisedButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => paginaHistorico()),
+                                      );
+
+                                    });
+                                  },
+                                  child: Text("+ Informações", style: TextStyle(color: Colors.white)),
+                                  color: Colors.blueAccent,
+                                  shape: new RoundedRectangleBorder(
+                                      borderRadius: new BorderRadius.circular(30.0)),
+                                ),
+                              )
+                            ],
+                          ),
+
+                      )),
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 5.0,
+                        offset: Offset(0, 5)),
+                  ]),
+
+
+                ),
+                Divider()
+
               ],
             )),
       ),
