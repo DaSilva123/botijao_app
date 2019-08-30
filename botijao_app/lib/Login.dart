@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.only(
                     top: MediaQuery.of(context).size.height / 50,
                     left: MediaQuery.of(context).size.height / 50),
-                 child: Text("Nome do aplicativo", style: TextStyle(color: Colors.blue,fontSize: 25,)),
+                 child: Text("OLHA O GÁS", style: TextStyle(color: Colors.blue,fontSize: 25,)),
                  ),
               Container(
                 padding: EdgeInsets.only(

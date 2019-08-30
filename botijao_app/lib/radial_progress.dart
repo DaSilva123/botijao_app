@@ -54,13 +54,10 @@ class _RadialProgressState extends State<RadialProgress>
           opacity: progressDegrees > 30 ? 1.0 : 0.0,
           duration: fadeInDuration,
           child: Column(
+
             children: <Widget>[
-              Text(
-                'Porcentagem',
-                style: TextStyle(fontSize: 23.0, letterSpacing: 1.5),
-              ),
               SizedBox(
-                height: 2.0,
+                height: 15.0,
               ),
               Container(
                 height: 5.0,
@@ -77,7 +74,7 @@ class _RadialProgressState extends State<RadialProgress>
                 style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold, color: Colors.blue),
               ),
               Text(
-                'Esta Cheio',
+                'Cheio',
                 style: TextStyle(
                     fontSize: 14.0, color: Colors.blue, letterSpacing: 1.5),
               ),

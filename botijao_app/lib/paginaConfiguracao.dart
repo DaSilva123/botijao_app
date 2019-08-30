@@ -70,15 +70,8 @@ class _paginaConfiguracaoState extends State<paginaConfiguracao> {
             children: <Widget>[
 
               Container(
-                child: Card(
-          child: Center(
-          child: Container(
-
-
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 10,
-                      left: MediaQuery.of(context).size.height / 45),
-                  child: Row(
+            padding: EdgeInsets.only(top: 10),
+              child: Row(
                     children: <Widget>[
                       Text(
                         "Token:",
@@ -91,9 +84,94 @@ class _paginaConfiguracaoState extends State<paginaConfiguracao> {
                     ],
                   ),
 
+
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 100,),
+                height: 70,
+                child: Card(
+                    child: Center(
+                      child: Container(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "Nome:",
+                              style: TextStyle(fontSize: 29),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text("Usuario", style: TextStyle(fontSize: 29))
+                          ],
+                        ),
+
+                      ),
+                    )
                 ),
-             )
-           ),
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 10.0,
+                      offset: Offset(0, 5)),
+                ]),
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 100,),
+                height: 70,
+                child: Card(
+                    child: Center(
+                      child: Container(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "E-mail:",
+                              style: TextStyle(fontSize: 29),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text("Usuario@exemplo.com", style: TextStyle(fontSize: 29))
+                          ],
+                        ),
+
+                      ),
+                    )
+                ),
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 10.0,
+                      offset: Offset(0, 5)),
+                ]),
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 100,),
+                height: 70,
+                child: Card(
+                    child: Center(
+                      child: Container(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "Token:",
+                              style: TextStyle(fontSize: 29),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text("098787X877C", style: TextStyle(fontSize: 29))
+                          ],
+                        ),
+
+                      ),
+                    )
+                ),
                 decoration: BoxDecoration(boxShadow: [
                   BoxShadow(
                       color: Colors.black12,

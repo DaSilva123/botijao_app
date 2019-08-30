@@ -16,7 +16,7 @@ class _PaginaInicialState extends State<PaginaInicial> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Pagina Inicial"),
+        title: Text("OLHA O GÁS"),
       ),
       ////////////////////////////////////////menu/////////////////////////
       drawer: new Drawer(
@@ -53,10 +53,11 @@ class _PaginaInicialState extends State<PaginaInicial> {
             ListTile(
               title: Text("Configurações"),
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => paginaConfiguracao()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => paginaConfiguracao()));
               },
-
             ),
             Divider(
               color: Colors.black,
@@ -68,55 +69,62 @@ class _PaginaInicialState extends State<PaginaInicial> {
       ////////////////////////////////////////menu/////////////////////////
 
       body: SingleChildScrollView(
+        padding: EdgeInsets.only(left: 10, right: 10, bottom: 20),
         /////////////////////////////////////porcentagem///////////////////
         child: Container(
+            child: Wrap(
+          direction: Axis.vertical,
+          spacing: 20,
+          runSpacing: 30,
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height / 50,
+              ),
+            ),
 
-            child: Column(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height / 50,
-                  ),
+                Text(
+                  "Porcentagem do botijão",
+                  style: TextStyle(fontSize: 15),
                 ),
-                Container(
-                  padding: EdgeInsets.only(
-                    right: MediaQuery.of(context).size.height / 3.0,
-                  ),
-                  child: Text(
-                    "Porcentagem do botijão",
-                    style: TextStyle(fontSize: 15),
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 250,
+
+                      padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height / 200),
+                      child: Card(
+                          child: Center(
+                              child: Container(
+                        child: RadialProgress(),
+                      ))),
+                      decoration: BoxDecoration(boxShadow: [
+                        BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 5,
+                            offset: Offset(0, 5)),
+                      ]),
+                    ),
+                  ],
                 ),
-                Container(
-                  height: 250,
-                  width: 400,
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 200),
-                  child: Card(
-                      child: Center(
-                          child: Container(
-                    child: RadialProgress(),
-                  ))),
-                  decoration: BoxDecoration(boxShadow: [
-                    BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 4.0,
-                        offset: Offset(0, 5)),
-                  ]),
-                ),
-                /////////////////////////////////////porcentagem////////////////
-                Divider(
-                  height: 40,
-                ),
-                /////////////////////////////////////Estimativa////////////////
-                Container(
-                  padding: EdgeInsets.only(
-                    right: MediaQuery.of(context).size.height / 2.65,
-                  ),
-                  child: Text(
-                    "Estimativa de tempo",
-                    style: TextStyle(fontSize: 15),
-                  ),
+              ],
+            ),
+
+            /////////////////////////////////////porcentagem////////////////
+
+            /////////////////////////////////////Estimativa////////////////
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "Estimativa de tempo",
+                  style: TextStyle(fontSize: 15),
                 ),
                 Container(
                   height: 200,
@@ -141,33 +149,31 @@ class _PaginaInicialState extends State<PaginaInicial> {
                                         MediaQuery.of(context).size.height / 10,
                                   ),
                                 ),
-                                Text("Fogo Alto :",
+                                Text("Fogo Alto:",
                                     style: TextStyle(
                                         fontSize: 20, color: Colors.red)),
                                 Text(
-                                  "16 H",
+                                  "16hs",
                                   style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.blue,
                                   ),
                                   textAlign: TextAlign.center,
                                 ),
-                                Divider(),
-                                Text('Fogo Medio :',
+                                Text('Fogo Médio:',
                                     style: TextStyle(
                                         fontSize: 20, color: Colors.orange)),
                                 Text(
-                                  "16 H",
+                                  "20hs",
                                   style: TextStyle(
                                       fontSize: 20, color: Colors.blue),
                                   textAlign: TextAlign.center,
                                 ),
-                                Divider(),
-                                Text("Fogo Baixo :",
+                                Text("Fogo Baixo:",
                                     style: TextStyle(
                                         fontSize: 20, color: Colors.amber)),
                                 Text(
-                                  "16 H",
+                                  "25hs",
                                   style: TextStyle(
                                       fontSize: 20, color: Colors.blue),
                                   textAlign: TextAlign.center,
@@ -186,127 +192,128 @@ class _PaginaInicialState extends State<PaginaInicial> {
                         offset: Offset(0, 5)),
                   ]),
                 ),
-                /////////////////////////////////////Estimativa////////////////
-                Divider(height: 40,),
-                /////////////////////////////////////Grafico////////////////
-                Container(
-                  padding: EdgeInsets.only(
-                    right: MediaQuery.of(context).size.height / 2.35,
-                  ),
-                  child: Text(
-                    "Gastos de hoje",
-                    style: TextStyle(fontSize: 15),
-                  ),
+              ],
+            ),
+
+            /////////////////////////////////////Estimativa////////////////
+
+            /////////////////////////////////////Grafico////////////////
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "Gastos de hoje",
+                  style: TextStyle(fontSize: 15),
                 ),
                 Container(
-
                   height: 270,
-                  width: 400,
+                  width: MediaQuery.of(context).size.width ,
                   child: Card(
                       child: Center(
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                  child: Card(
-                                      child: Center(
-                    child: Container(
-                      padding: EdgeInsets.only(top: 15),
-                      width: 350,
-                      height: 180,
-                      child: Card(
-                        child: Center(
-                              child: Container(
-
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                            child: Card(
+                                child: Center(
+                          child: Container(
+                            padding: EdgeInsets.only(top: 15),
+                            width: 330,
+                            height: 180,
+                            child: Card(
+                              child: Center(
                                 child: Container(
-                                  color: Colors.red,
-                                  height: MediaQuery.of(context).size.height / 2,
-                                  width: MediaQuery.of(context).size.width * 0.9,
-                                  child: BezierChart(
-                                    bezierChartScale: BezierChartScale.CUSTOM,
-                                    xAxisCustomValues: const [
-                                      0,
-                                      4,
-                                      8,
-                                      12,
-                                      16,
-                                      20,
-                                      24
-                                    ],
-                                    series: const [
-                                      BezierLine(
-                                        data: const [
-                                          DataPoint<double>(value: 100, xAxis: 0),
-                                          DataPoint<double>(value: 99, xAxis: 4),
-                                          DataPoint<double>(value: 98, xAxis: 8),
-                                          DataPoint<double>(value: 95, xAxis: 12),
-                                          DataPoint<double>(value: 95, xAxis: 16),
-                                          DataPoint<double>(value: 95, xAxis: 20),
-                                          DataPoint<double>(value: 93, xAxis: 24),
-                                        ],
+                                  child: Container(
+                                    color: Colors.red,
+                                    height:
+                                        MediaQuery.of(context).size.height / 2,
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.9,
+                                    child: BezierChart(
+                                      bezierChartScale: BezierChartScale.CUSTOM,
+                                      xAxisCustomValues: const [
+                                        0,
+                                        4,
+                                        8,
+                                        12,
+                                        16,
+                                        20,
+                                        24
+                                      ],
+                                      series: const [
+                                        BezierLine(
+                                          data: const [
+                                            DataPoint<double>(
+                                                value: 100, xAxis: 0),
+                                            DataPoint<double>(
+                                                value: 99, xAxis: 4),
+                                            DataPoint<double>(
+                                                value: 98, xAxis: 8),
+                                            DataPoint<double>(
+                                                value: 95, xAxis: 12),
+                                            DataPoint<double>(
+                                                value: 95, xAxis: 16),
+                                            DataPoint<double>(
+                                                value: 95, xAxis: 20),
+                                            DataPoint<double>(
+                                                value: 93, xAxis: 24),
+                                          ],
+                                        ),
+                                      ],
+                                      config: BezierChartConfig(
+                                        verticalIndicatorStrokeWidth: 3.0,
+                                        verticalIndicatorColor: Colors.black26,
+                                        showVerticalIndicator: true,
+                                        backgroundColor: Colors.blueAccent,
+                                        snap: false,
                                       ),
-                                    ],
-                                    config: BezierChartConfig(
-                                      verticalIndicatorStrokeWidth: 3.0,
-                                      verticalIndicatorColor: Colors.black26,
-                                      showVerticalIndicator: true,
-                                      backgroundColor: Colors.blueAccent,
-                                      snap: false,
                                     ),
                                   ),
                                 ),
                               ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(boxShadow: [
-                        BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 10.0,
-                                offset: Offset(10, 10)),
-                      ]),
-                    ),
-                  ))),
-                              Container(
-
-                                padding: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.height / 30,
-                                    left: MediaQuery.of(context).size.height / 2.9
-
-                                ),
-
-
-                                child: RaisedButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => paginaHistorico()),
-                                      );
-
-                                    });
-                                  },
-                                  child: Text("+ Informações", style: TextStyle(color: Colors.white)),
-                                  color: Colors.blueAccent,
-                                  shape: new RoundedRectangleBorder(
-                                      borderRadius: new BorderRadius.circular(30.0)),
-                                ),
-                              )
-                            ],
+                            ),
+                            decoration: BoxDecoration(boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black12,
+                                  blurRadius: 10.0,
+                                  offset: Offset(0, 5)),
+                            ]),
                           ),
-
-                      )),
+                        ))),
+                        Container(
+                          padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height / 30,
+                              left: MediaQuery.of(context).size.height / 4.5),
+                          child: RaisedButton(
+                            onPressed: () {
+                              setState(() {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => paginaHistorico()),
+                                );
+                              });
+                            },
+                            child: Text("+ Informações",
+                                style: TextStyle(color: Colors.white)),
+                            color: Colors.blueAccent,
+                            shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(30.0)),
+                          ),
+                        )
+                      ],
+                    ),
+                  )),
                   decoration: BoxDecoration(boxShadow: [
                     BoxShadow(
                         color: Colors.grey,
-                        blurRadius: 5.0,
+                        blurRadius: 10.0,
                         offset: Offset(0, 5)),
                   ]),
-
-
                 ),
-                Divider()
-
               ],
-            )),
+            ),
+          ],
+        )),
       ),
     );
   }

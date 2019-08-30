@@ -71,6 +71,7 @@ class _paginaHistoricoState extends State<paginaHistorico> {
         child: Container(
           child: Column(
             children: <Widget>[
+              Divider(height: 30,),
               Container(
                   child: Container(
                     padding: EdgeInsets.only(
@@ -175,7 +176,7 @@ class _paginaHistoricoState extends State<paginaHistorico> {
 
               ),
               //////////////////////////////////////////////////////////////////
-              Divider(height: 10,),
+              Divider(height: 30,),
               Container(
                 child: Container(
                   padding: EdgeInsets.only(
@@ -189,6 +190,7 @@ class _paginaHistoricoState extends State<paginaHistorico> {
                 ),
 
               ),
+
               Container(
 
                 height: 220,
@@ -279,7 +281,7 @@ class _paginaHistoricoState extends State<paginaHistorico> {
                 ]),
 
               ),
-              Divider(height: 10,),
+              Divider(height: 30,),
               Container(
                 child: Container(
                   padding: EdgeInsets.only(
@@ -293,6 +295,7 @@ class _paginaHistoricoState extends State<paginaHistorico> {
                 ),
 
               ),
+
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Container(
@@ -409,11 +412,148 @@ class _paginaHistoricoState extends State<paginaHistorico> {
                   ]),
 
                 ),
+
               ),
+              Divider(height: 30,),
+              Container(
+                child: Container(
+                  padding: EdgeInsets.only(
+                    right: MediaQuery.of(context).size.height / 2.55,
+                  ),
+                  child: Text(
+                    "Gastos do més",
+                    style: TextStyle(fontSize: 15),
+                  ),
+
+                ),
+
+              ),
+
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Container(
+
+                  height: 220,
+                  width: 700,
+                  child: Card(
+                      child: Center(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                                child: Card(
+                                    child: Center(
+                                      child: Container(
+                                        padding: EdgeInsets.only(top: 15),
+                                        width: 650,
+                                        height: 180,
+                                        child: Card(
+                                          child: Center(
+                                            child: Container(
+
+                                              child: Container(
+                                                color: Colors.red,
+                                                height: MediaQuery.of(context).size.height / 1,
+                                                width: MediaQuery.of(context).size.width * 5,
+                                                child: BezierChart(
+
+                                                  bezierChartScale: BezierChartScale.CUSTOM,
+                                                  xAxisCustomValues: const [
+                                                    1, 2, 3, 4, 5,
+                                                    6, 7, 8, 9, 10,
+                                                    11, 12, 13, 14, 15,
+                                                    16, 17, 18, 19, 20,
+                                                    21, 22, 23, 24, 25,
+                                                    26,27,28,29,30
+                                                  ],
+                                                  series: const [
+                                                    BezierLine(
+                                                      data: const [
+                                                        DataPoint<double>(value: 18, xAxis: 1),
+                                                        DataPoint<double>(value: 15, xAxis: 2),
+                                                        DataPoint<double>(value: 12, xAxis: 3),
+                                                        DataPoint<double>(value: 10, xAxis: 4),
+                                                        DataPoint<double>(value: 8, xAxis: 5),
+                                                        DataPoint<double>(value: 4, xAxis: 6),
+                                                        DataPoint<double>(value: 1, xAxis: 7),
+                                                        DataPoint<double>(value: 1, xAxis: 8),
+                                                        DataPoint<double>(value: 0, xAxis: 9),
+                                                        DataPoint<double>(value: 0, xAxis: 10),
+                                                        DataPoint<double>(value: 0, xAxis: 11),
+                                                        DataPoint<double>(value: 0, xAxis: 12),
+                                                        DataPoint<double>(value: 0, xAxis: 13),
+                                                        DataPoint<double>(value: 0, xAxis: 14),
+                                                        DataPoint<double>(value: 0, xAxis: 15),
+                                                        DataPoint<double>(value: 0, xAxis: 16),
+                                                        DataPoint<double>(value: 0, xAxis: 17,),
+                                                        DataPoint<double>(value: 0, xAxis: 18),
+                                                        DataPoint<double>(value: 0, xAxis: 19),
+                                                        DataPoint<double>(value: 0, xAxis: 20),
+                                                        DataPoint<double>(value: 0, xAxis: 21),
+                                                        DataPoint<double>(value: 0, xAxis: 22),
+                                                        DataPoint<double>(value: 0, xAxis: 23),
+                                                        DataPoint<double>(value: 0, xAxis: 24),
+                                                        DataPoint<double>(value: 0, xAxis: 25),
+                                                        DataPoint<double>(value: 0, xAxis: 26),
+                                                        DataPoint<double>(value: 0, xAxis: 27),
+                                                        DataPoint<double>(value: 0, xAxis: 28),
+                                                        DataPoint<double>(value: 0, xAxis: 29),
+                                                        DataPoint<double>(value: 0, xAxis: 30),
+
+                                                      ],
+                                                    ),
+                                                  ],
+                                                  config: BezierChartConfig(
+                                                    verticalIndicatorStrokeWidth: 3.0,
+                                                    verticalIndicatorColor: Colors.black26,
+                                                    showVerticalIndicator: true,
+                                                    backgroundColor: Colors.blueAccent,
+                                                    snap: false,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        decoration: BoxDecoration(boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.grey,
+                                              blurRadius: 10.0,
+                                              offset: Offset(10, 10)),
+                                        ]),
+                                      ),
+                                    ))),
+                            Container(
+
+                              padding: EdgeInsets.only(
+                                  top: MediaQuery.of(context).size.height / 30,
+                                  left: MediaQuery.of(context).size.height / 2.9
+
+                              ),
+
+
+
+                            )
+                          ],
+                        ),
+
+                      )),
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 5.0,
+                        offset: Offset(0, 5)),
+                  ]),
+
+                ),
+
+              ),
+              Divider(height: 30,)
             ],
 
           ),
+
         ),
+
 
       ),
 
