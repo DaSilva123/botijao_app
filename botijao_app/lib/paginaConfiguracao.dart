@@ -1,6 +1,9 @@
+import 'package:botijao_app/Login.dart';
 import 'package:botijao_app/paginaHistorico.dart';
 import 'package:botijao_app/paginaInicial.dart';
+import 'package:botijao_app/revendedor.dart';
 import 'package:flutter/material.dart';
+
 
 class paginaConfiguracao extends StatefulWidget {
   @override
@@ -10,6 +13,9 @@ class paginaConfiguracao extends StatefulWidget {
 class _paginaConfiguracaoState extends State<paginaConfiguracao> {
   @override
   Widget build(BuildContext context) {
+    bool _handleRadioValueChange1 = false;
+    bool _handleRadioValueChange2 = false;
+    bool _handleRadioValueChange3 = false;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -60,125 +66,221 @@ class _paginaConfiguracaoState extends State<paginaConfiguracao> {
               color: Colors.black,
               height: 5.0,
             ),
+            ListTile(
+              title: Text("Revendedor"),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Revendedor()));
+              },
+            ),
+            Divider(
+              color: Colors.black,
+              height: 5.0,
+            ),
+            ListTile(
+              title: Text("Sair"),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LoginPage()));
+              },
+            ),
+            Divider(
+              color: Colors.black,
+              height: 5.0,
+            ),
           ],
         ),
       ),
       body: SingleChildScrollView(
+        
+        
         child: Container(
-          child: Column(
+          padding: EdgeInsets.all(20),
+          child: Wrap(
+            direction: Axis.vertical,
+            spacing: 15,
+
 
             children: <Widget>[
 
               Container(
-            padding: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 30,
+                ),
+
+
               child: Row(
                     children: <Widget>[
                       Text(
                         "Token:",
-                        style: TextStyle(fontSize: 29),
+                        style: TextStyle(fontSize: 25),
                       ),
                       SizedBox(
                         width: 10,
                       ),
-                      Text("098787X877C", style: TextStyle(fontSize: 29))
+                      Text("098787X877C", style: TextStyle(fontSize: 25))
                     ],
                   ),
 
 
               ),
               Container(
-                padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 100,),
-                height: 70,
-                child: Card(
-                    child: Center(
-                      child: Container(
+
                         padding: EdgeInsets.only(top: 10),
                         child: Row(
                           children: <Widget>[
                             Text(
                               "Nome:",
-                              style: TextStyle(fontSize: 29),
+                              style: TextStyle(fontSize: 25),
                             ),
                             SizedBox(
                               width: 10,
                             ),
-                            Text("Usuario", style: TextStyle(fontSize: 29))
+                            Text("Usuario", style: TextStyle(fontSize: 25))
                           ],
                         ),
 
                       ),
-                    )
-                ),
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 10.0,
-                      offset: Offset(0, 5)),
-                ]),
-              ),
+
+
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Container(
+                          padding: EdgeInsets.only(top: 10),
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                "E-mail:",
+                                style: TextStyle(fontSize: 25),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text("Usuario@exemplo\n.com", style: TextStyle(fontSize: 25))
+                            ],
+                          ),
+
+                        ),
+                      ),
+
               Container(
-                padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 100,),
-                height: 70,
-                child: Card(
-                    child: Center(
-                      child: Container(
+
                         padding: EdgeInsets.only(top: 10),
                         child: Row(
                           children: <Widget>[
                             Text(
-                              "E-mail:",
-                              style: TextStyle(fontSize: 29),
+                              "Tel:",
+                              style: TextStyle(fontSize: 25),
                             ),
                             SizedBox(
-                              width: 10,
+                              width: 45,
                             ),
-                            Text("Usuario@exemplo.com", style: TextStyle(fontSize: 29))
+                            Text("88999998888", style: TextStyle(fontSize: 25))
                           ],
                         ),
 
                       ),
-                    )
+              Container(
+
+                padding: EdgeInsets.only(top: 10),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      "Tel2:",
+                      style: TextStyle(fontSize: 25),
+                    ),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    Text("88999998888", style: TextStyle(fontSize: 25))
+                  ],
                 ),
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 10.0,
-                      offset: Offset(0, 5)),
-                ]),
+
               ),
+
+              Container(
+                  padding: EdgeInsets.all(8.0),
+                  child: new Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+
+                        new Text(
+                          'Tara do Botijão:',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
+                          ),
+                        ),
+                        new Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            new Radio(
+                                value: _handleRadioValueChange2,
+                                groupValue: "13kg",
+                                onChanged: (value){setState(() {
+                                  _handleRadioValueChange2 = !_handleRadioValueChange2;
+                                });}
+                            ),
+                            new Text(
+                              '13Kg',
+                              style: new TextStyle(fontSize: 20.0),
+                            ),
+                            new Radio(
+                                value: _handleRadioValueChange3,
+                                groupValue: "13kg",
+                                onChanged: (value){setState(() {
+                                  _handleRadioValueChange3 = !_handleRadioValueChange3;
+                                });}
+                            ),
+                            new Text(
+                              '14Kg',
+                              style: new TextStyle(
+                                fontSize: 20.0,
+                              ),
+                            ),
+                            new Radio(
+                                value: _handleRadioValueChange1,
+                                groupValue: "13kg",
+                                onChanged: (value){setState(() {
+                                  _handleRadioValueChange1 = !_handleRadioValueChange1;
+                                });}
+                            ),
+                            new Text(
+                              '15Kg',
+                              style: new TextStyle(fontSize: 20.0),
+                            ),
+                          ],
+                        ),
+                      ])),
               Container(
                 padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 100,),
-                height: 70,
-                child: Card(
-                    child: Center(
-                      child: Container(
-                        padding: EdgeInsets.only(top: 10),
-                        child: Row(
-                          children: <Widget>[
-                            Text(
-                              "Token:",
-                              style: TextStyle(fontSize: 29),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text("098787X877C", style: TextStyle(fontSize: 29))
-                          ],
-                        ),
-
-                      ),
-                    )
+                  top: MediaQuery.of(context).size.height / 10,
+                  left: MediaQuery.of(context).size.height/ 6.9
                 ),
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 10.0,
-                      offset: Offset(0, 5)),
-                ]),
-              ),
+
+                child: RaisedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => paginaHistorico()),
+                      );
+                    });
+                  },
+                  child: Text("Alterar Dados",
+                      style: TextStyle(color: Colors.white)),
+                  color: Colors.blueAccent,
+                  shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0)),
+                ),
+              )
+
+
 
             ],
           ),

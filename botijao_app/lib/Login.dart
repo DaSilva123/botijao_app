@@ -60,9 +60,9 @@ class _LoginPageState extends State<LoginPage> {
                       icon: Icon(Icons.vpn_key)),
                 ),
               ),
-              Divider(),
-              Divider(),
+
               Container(
+                width: 150,
                 padding: EdgeInsets.only(
                     top: MediaQuery.of(context).size.height / 40),
                 child: RaisedButton(
@@ -82,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(bottom: 0.0, top: 60.0),
+                padding: EdgeInsets.only(bottom: 0.0, top: 90.0),
                 child: Text("Ainda não tem conta?",
                     style: TextStyle(color: Colors.black)),
               ),

@@ -1,5 +1,7 @@
+import 'package:botijao_app/Login.dart';
 import 'package:botijao_app/paginaConfiguracao.dart';
 import 'package:botijao_app/paginaInicial.dart';
+import 'package:botijao_app/revendedor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:bezier_chart/bezier_chart.dart';
@@ -21,6 +23,7 @@ class _paginaHistoricoState extends State<paginaHistorico> {
 
 
       ),
+      ////////////////////////////////////////menu/////////////////////////
       drawer: new Drawer(
         child: ListView(
           children: <Widget>[
@@ -55,10 +58,37 @@ class _paginaHistoricoState extends State<paginaHistorico> {
             ListTile(
               title: Text("Configurações"),
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) =>  paginaConfiguracao()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => paginaConfiguracao()));
               },
-
+            ),
+            Divider(
+              color: Colors.black,
+              height: 5.0,
+            ),
+            ListTile(
+              title: Text("Revendedor"),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Revendedor()));
+              },
+            ),
+            Divider(
+              color: Colors.black,
+              height: 5.0,
+            ),
+            ListTile(
+              title: Text("Sair"),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LoginPage()));
+              },
             ),
             Divider(
               color: Colors.black,
@@ -66,7 +96,9 @@ class _paginaHistoricoState extends State<paginaHistorico> {
             ),
           ],
         ),
+
       ),
+      ////////////////////////////////////////menu/////////////////////////
       body:  SingleChildScrollView(
         child: Container(
           child: Column(
@@ -87,6 +119,7 @@ class _paginaHistoricoState extends State<paginaHistorico> {
               ),
               Container(
 
+
                 height: 220,
                 width: 400,
                 child: Card(
@@ -98,7 +131,7 @@ class _paginaHistoricoState extends State<paginaHistorico> {
                                   child: Center(
                                     child: Container(
                                       padding: EdgeInsets.only(top: 15),
-                                      width: 350,
+                                      width: 370,
                                       height: 180,
                                       child: Card(
                                         child: Center(
@@ -107,7 +140,7 @@ class _paginaHistoricoState extends State<paginaHistorico> {
                                             child: Container(
                                               color: Colors.red,
                                               height: MediaQuery.of(context).size.height / 2,
-                                              width: MediaQuery.of(context).size.width * 0.9,
+                                              width: MediaQuery.of(context).size.width * 1,
                                               child: BezierChart(
                                                 bezierChartScale: BezierChartScale.CUSTOM,
                                                 xAxisCustomValues: const [
@@ -213,7 +246,7 @@ class _paginaHistoricoState extends State<paginaHistorico> {
                                             child: Container(
                                               color: Colors.red,
                                               height: MediaQuery.of(context).size.height / 2,
-                                              width: MediaQuery.of(context).size.width * 0.9,
+                                              width: MediaQuery.of(context).size.width * 1,
                                               child: BezierChart(
                                                 bezierChartScale: BezierChartScale.CUSTOM,
                                                 xAxisCustomValues: const [

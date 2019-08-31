@@ -1,7 +1,9 @@
 import 'package:bezier_chart/bezier_chart.dart';
+import 'package:botijao_app/Login.dart';
 import 'package:botijao_app/Teste.dart';
 import 'package:botijao_app/paginaConfiguracao.dart';
 import 'package:botijao_app/paginaHistorico.dart';
+import 'package:botijao_app/revendedor.dart';
 import 'package:flutter/material.dart';
 import 'package:botijao_app/radial_progress.dart';
 
@@ -63,8 +65,35 @@ class _PaginaInicialState extends State<PaginaInicial> {
               color: Colors.black,
               height: 5.0,
             ),
+            ListTile(
+              title: Text("Revendedor"),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Revendedor()));
+              },
+            ),
+            Divider(
+              color: Colors.black,
+              height: 5.0,
+            ),
+            ListTile(
+              title: Text("Sair"),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LoginPage()));
+              },
+            ),
+            Divider(
+              color: Colors.black,
+              height: 5.0,
+            ),
           ],
         ),
+
       ),
       ////////////////////////////////////////menu/////////////////////////
 
@@ -274,8 +303,8 @@ class _PaginaInicialState extends State<PaginaInicial> {
                             decoration: BoxDecoration(boxShadow: [
                               BoxShadow(
                                   color: Colors.black12,
-                                  blurRadius: 10.0,
-                                  offset: Offset(0, 5)),
+                                  blurRadius: 15.0,
+                                  offset: Offset(0, 15)),
                             ]),
                           ),
                         ))),
@@ -303,12 +332,7 @@ class _PaginaInicialState extends State<PaginaInicial> {
                       ],
                     ),
                   )),
-                  decoration: BoxDecoration(boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 10.0,
-                        offset: Offset(0, 5)),
-                  ]),
+
                 ),
               ],
             ),
