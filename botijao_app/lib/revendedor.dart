@@ -119,7 +119,7 @@ class _RevendedorState extends State<Revendedor> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    
+
                     Container(
                       padding: EdgeInsets.only(
                         top: MediaQuery
