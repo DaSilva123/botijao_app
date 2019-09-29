@@ -1,0 +1,8 @@
+class Fabricante {
+
+String nome,cidade,contado;
+
+
+String cadastrarFabricante(String nome,String cidade,String contado)
+
+}

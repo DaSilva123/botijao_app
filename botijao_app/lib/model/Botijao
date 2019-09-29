@@ -1,0 +1,14 @@
+class Botijao{
+int id;
+String nome;
+Float peso,tara;
+Boolean status;
+
+Boolean status(Boolean status){
+
+}
+void historico(int id, int leitura){
+
+}
+
+}

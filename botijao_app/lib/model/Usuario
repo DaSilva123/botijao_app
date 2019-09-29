@@ -1,0 +1,23 @@
+class Usuario{
+int id;
+String nome,rua,numero,bairro,cep,telefone,email;
+
+void verificarHistorico(int hitorico){
+
+}
+
+Boolean pedirBotijao(Boolean trocarBotijao){
+
+} 
+String cadastrarBotijao(String fabricante, float tara){
+
+}
+String alterarDados(String dadoAlterado){
+
+}
+Boolean login(String usuario,String senha){
+
+}
+
+
+}

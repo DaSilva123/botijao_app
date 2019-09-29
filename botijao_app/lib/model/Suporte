@@ -1,0 +1,11 @@
+class Suporte {
+  int idsuporte;
+
+  bool identificarBotijao(int idBotijao){
+
+  }
+   bool identificarSuporte(int idsuporte){
+
+  }
+  
+}

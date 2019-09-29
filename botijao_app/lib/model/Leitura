@@ -1,0 +1,13 @@
+class Leitura {
+
+  int id;
+  String data, hora;
+  
+}
+
+void historicoDeLeitura(int idbotijão, String data, String hora){
+
+}
+void leitura(int idbotijão, String data, String hora){
+
+}
