@@ -1,3 +1,4 @@
+import 'package:botijao_app/Cadastro.dart';
 import 'package:botijao_app/paginaInicial.dart';
 import 'package:flutter/material.dart';
 
@@ -86,7 +87,26 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text("Ainda não tem conta?",
                     style: TextStyle(color: Colors.black)),
               ),
-              Text("Cadastrar", style: TextStyle(color: Colors.blueAccent)),
+              Container(
+                width: 150,
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height / 130),
+                child: RaisedButton.icon(onPressed: (){
+                  setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CadastroPage()),
+                      );
+
+                    });
+                },
+                label: Text('Cadastrar', style: TextStyle(color: Colors.blueAccent)),
+                 icon: Icon(Icons.person_add, color: Colors.blueAccent), 
+                 color: Colors.white,
+                  shape: new RoundedRectangleBorder(
+                   borderRadius: new BorderRadius.circular(30.0))
+                 ),
+              ),
             ],
           ),
         ),
