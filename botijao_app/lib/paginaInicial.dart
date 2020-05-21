@@ -10,6 +10,8 @@ import 'package:botijao_app/radial_progress.dart';
 class PaginaInicial extends StatefulWidget {
   @override
   _PaginaInicialState createState() => _PaginaInicialState();
+  PaginaInicial({this.user});
+  final String user;
 }
 
 class _PaginaInicialState extends State<PaginaInicial> {
@@ -25,7 +27,7 @@ class _PaginaInicialState extends State<PaginaInicial> {
         child: ListView(
           children: <Widget>[
             new UserAccountsDrawerHeader(
-                accountName: new Text('Usuario'),
+                accountName: new Text('$user'),
                 accountEmail: new Text('ExemploEmail@gmail.com'),
                 currentAccountPicture: new CircleAvatar(
                   backgroundImage: new NetworkImage('http://i.pravatar.cc/300'),

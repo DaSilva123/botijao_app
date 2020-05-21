@@ -6,8 +6,11 @@ import 'package:flutter/material.dart';
 
 
 class paginaConfiguracao extends StatefulWidget {
+  
   @override
   _paginaConfiguracaoState createState() => _paginaConfiguracaoState();
+  paginaConfiguracao({this.user});
+  final String user;
 }
 
 class _paginaConfiguracaoState extends State<paginaConfiguracao> {
@@ -26,7 +29,7 @@ class _paginaConfiguracaoState extends State<paginaConfiguracao> {
         child: ListView(
           children: <Widget>[
             new UserAccountsDrawerHeader(
-                accountName: new Text('Usuario'),
+                accountName: new Text(user),
                 accountEmail: new Text('ExemploEmail@gmail.com'),
                 currentAccountPicture: new CircleAvatar(
                   backgroundImage: new NetworkImage('http://i.pravatar.cc/300'),

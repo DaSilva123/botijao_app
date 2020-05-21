@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 class Revendedor extends StatefulWidget {
   @override
   _RevendedorState createState() => _RevendedorState();
+   Revendedor({this.user});
+  final String user;
 }
 
 class _RevendedorState extends State<Revendedor> {
@@ -22,7 +24,7 @@ class _RevendedorState extends State<Revendedor> {
         child: ListView(
           children: <Widget>[
             new UserAccountsDrawerHeader(
-                accountName: new Text('Usuario'),
+                accountName: new Text(user),
                 accountEmail: new Text('ExemploEmail@gmail.com'),
                 currentAccountPicture: new CircleAvatar(
                   backgroundImage: new NetworkImage('http://i.pravatar.cc/300'),

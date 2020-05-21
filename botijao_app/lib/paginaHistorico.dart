@@ -9,6 +9,8 @@ import 'package:bezier_chart/bezier_chart.dart';
 class paginaHistorico extends StatefulWidget {
   @override
   _paginaHistoricoState createState() => _paginaHistoricoState();
+   paginaHistorico({this.user});
+  final String user;
 }
 
 class _paginaHistoricoState extends State<paginaHistorico> {
@@ -28,7 +30,7 @@ class _paginaHistoricoState extends State<paginaHistorico> {
         child: ListView(
           children: <Widget>[
             new UserAccountsDrawerHeader(
-                accountName: new Text('Usuario'),
+                accountName: new Text(user),
                 accountEmail: new Text('ExemploEmail@gmail.com'),
                 currentAccountPicture: new CircleAvatar(
                   backgroundImage: new NetworkImage('http://i.pravatar.cc/300'),
